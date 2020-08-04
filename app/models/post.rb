@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
     def clickbait
         if self.title.present?
-            unless self.title.match?(/Won't Believe | Secret | Top\s(0...9) | Guess/)
+            unless self.title.match?(/Won't Believe | Secret | Top\s[0-9] | Guess/)
                 self.errors[:title] << "Title doesn't match"
             end
         end 
